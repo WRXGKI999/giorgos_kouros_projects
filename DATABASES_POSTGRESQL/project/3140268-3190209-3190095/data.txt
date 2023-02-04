@@ -1,0 +1,7 @@
+Φατσέα Ανθίππη-3190209
+Εφεντάκης Εμμανουήλ-3140268
+Κούρος Γεώργιος-3190095 
+Endpoint: tsirigo.postgres.database.azure.com
+Username: examiner@tsirigo
+Password: 1122
+Database: MOVIES
