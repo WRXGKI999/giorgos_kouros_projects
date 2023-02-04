@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="el">
+    <head>
+        <title> SignUp | EveryTech</title>
+        <link rel="stylesheet" type="text/css" href="basics.css"> 
+        <link rel="icon" href ="minilogo.png" type = "image/x-icon">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Το EveryTech είναι το μέρος που θα βρεις προϊόντα τεχνολογίας και ψυχαγωγίας, καλύπτοντας όλα τα γούστα και προτιμήσεις!">
+        <meta name="author" content="Giorgos, Manos">
+        <meta name="keywords" content="everytech, laptops, smartphones, τηλεοράσεις">
+    </head>
+    <body>
+        <header>
+            <section>
+            <form>
+                <input  type="text" name="search" placeholder="Searching for..">
+            </form>
+            <img src="makrylogo.png" alt="The logo of the eshop">
+            <h1> Sign-Up </h1>
+            </section>
+            <section class="services">
+                <ul>
+                    <li> 💵 Δόσεις χωρίς κάρτα</li>
+                    <li> ✈️ Δωρεάν μεταφορικά από 35€ και άνω</li>
+                    <li> 📦 Δωρεάν παραλαβή από κατάστημα</li>
+                    <li> 🗺️ Ζωντανή παρακολούθηση παραγγελίας</li>
+                </ul>
+            </section>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="index.html"> Home </a></li>
+                <li><a href="product-categories.html"> Products</a></li>
+                <li><a href="about-us.html"> About Us</a> </li>
+                <li><a href="contact-us.html"> Contact Us</a></li>
+            </ul>
+        </nav>
+        <main>
+            <form id="signup" method="post">
+                <fieldset class="contact-fieldset">
+                    <legend>Sign-Up</legend>
+                    <fieldset class="contact-fieldset">
+                        <legend>Personal Data</legend>
+                        <label for="cl_name">Ονοματεπώνυμο →</label>
+                        <input type="text" id="cl_name" name="client_name" autocomplete="on" placeholder="Name Surname" required> <br>
+                        <label for="cl_email">Email →</label>
+                        <input type="email" id="cl_email" name="client_email"
+                        placeholder= "username@gmail.com"
+                        pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required
+                        title="Παρακαλώ καταχωρίστε μια διεύθυνση
+                        email π.χ. username@yahoo.gr" autocomplete="on" list="user_emails"><br>
+                        <datalist id="user_emails">
+                            <option>abc@yahoo.gr</option>
+                            <option>abc@gmail.com</option>
+                            <option>abc@hotmail.com</option>
+                            <option>abc@icloud.com</option>
+                        </datalist>
+                        <label for="cl_address">Διεύθυνση Κατοικίας →</label>
+                        <input type="text" id="cl_address" name="client_add.ress" placeholder="Street Name & Number" autocomplete="on"
+                        required><br>
+                        <label for="cl_birth">Ημερομηνία Γέννησης →</label>
+                        <input type="date" id="cl_birth" name="client_birth" required><br>
+                        <label for="cl_tel">Τηλέφωνο Επικοινωνίας →</label>
+                        <input type="tel" id="cl_tel" name="client_telephone"
+                        placeholder="π.χ. 1234567890"
+                        pattern="[0-9]{10}" required
+                        title="Πληκτρολογήστε έγκυρο αριθμό τηλεφώνου (10 ψηφία)">
+                    </fieldset>
+                    <fieldset class="contact-fieldset">
+                        <legend>Payment & Shipping</legend>
+                        <label for="cl_address_ship">Διεύθυνση Αποστολής →</label>
+                        <input type="text" id="cl_address_ship" name="client_address_ship" placeholder="Street Name & Number" 
+                        required><br>
+                        <label for="payment_method">Τρόπος Πληρωμής →</label>
+                        <select id="payment_method" name="payment" required>
+                            <option value="" disabled selected>Επιλέξετε Τρόπο Πληρωμής</option>
+                            <option value="cash">Αντικαταβολή</option>
+                            <option value="credit_card">Πιστωτική Κάρτα</option>
+                            <option value="paypal">Paypal</option>
+                        </select>
+                    </fieldset>
+                    <fieldset class="contact-fieldset">
+                        <legend>Login Details</legend>
+                        <label for="cl_username">Username →</label>
+                        <input type="text" id="cl_username" name="client_username" placeholder="Choose a Nickname" autocomplete="on" list="username_list"
+                        required><br>
+                        <datalist id="username_list">
+                            <option>becky</option>
+                            <option>james123</option>
+                            <option>A@loren</option>
+                        </datalist>
+                        <label for="cl_password">Password →</label>
+                        <input type="password" id="cl_password" name="client_password" 
+                        pattern="(?=.*[!@#$%^&*])(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                        title="Check again the password requirements and try again !
+                        Make sure that your password is at least 8 characters."
+                        required>
+                        <details>
+                            <summary>Check Password Requirements</summary>
+                            <ul>
+                                <li>At least one lowercase letter</li>
+                                <li>At least one uppercase letter</li>
+                                <li>At least on of the following symbols : ! @ # $ % ^ & *</li>
+                                <li>At least one number</li>
+                            </ul>
+                        </details>
+                        <label for="cl_confirm_password">Confirm Password →</label>
+                        <input type="password" id="cl_confirm_password" name="client_confirm_password" 
+                        required><br>                    
+                    </fieldset>
+                    <fieldset class="contact-fieldset">
+                        <details>
+                            <summary>Newsletter Options</summary>
+                            <input type="checkbox" id="comm_sms" name="sms">
+                            <label for="comm_sms">SMS</label><br>
+                            <input type="checkbox" id="comm_email" name="email">
+                            <label for="comm_email">Email</label><br>
+                            <input type="checkbox" id="comm_viber" name="viber">
+                            <label for="comm_viber">Viber</label><br>
+                            <input type="checkbox" id="comm_whatsapp" name="whatsapp">
+                            <label for="comm_whatsapp">WhatsApp</label><br> 
+                        </details> 
+                    </fieldset>
+                </fieldset> 
+            </form>
+            <fieldset form="signup" class="contact-fieldset">
+                <legend>Your shopping profile</legend>
+                <label for="cl_q1">Πόσο συχνά κάνετε αγορές online ;</label><br>
+                <textarea id="cl_q1" name="client_q1" rows="2" cols="60" placeholder="Type your answer here"></textarea><br>
+                <label for="cl_q2">Ποιόν τρόπο πληρωμής χρησιμοποιείτε πιο συχνά για τις αγορές σας ;</label><br>
+                <textarea id="cl_q2" name="client_q2" rows="2" cols="60" placeholder="Type your answer here"></textarea><br>
+                <label for="cl_q3">Ποιές κατηγορίες προϊόντων προτιμάτε περισσότερο ;</label><br>
+                <textarea id="cl_q3" name="client_q3" rows="2" cols="60" placeholder="Type your answer here"></textarea><br>
+                <fieldset class="contact-fieldset">
+                    <legend>Ποιόν τρόπο επικοινωνίας προτιμάτε για την εξέλιξη της παραγγελίας σας ;</legend>
+                    <input type="radio" id="cl_q4.1" name="client_q4" value="call" >
+                    <label for="cl_q4.1">Τηλεφωνική Κλήση</label>
+                    <input type="radio" id="cl_q4.2" name="client_q4" value="email/sms" checked>
+                    <label for="cl_q4.2">Email/SMS</label><br>
+                </fieldset>
+                <fieldset class="contact-fieldset">
+                <legend>Φύλλο</legend><br>
+                <input type="radio" id="cl_q5.1" name="client_q5" checked>
+                <label for="cl_q5.1">Άνδρας</label>
+                <input type="radio" id="cl_q5.2" name="client_q5">
+                <label for="cl_q5.2">Γυναίκα</label>
+                </fieldset><br>
+            </fieldset>
+            <input type="submit" value="Submit" form="signup" id="submit">
+            <script src="test.js"></script>
+        </main>
+        <footer>
+            <section class="footer-extras">
+            <a href="https://www.facebook.com/" target="_blank">
+            <img src="fb.png" alt="Facebook"></a>
+            <a href="https://www.instagram.com/" target="_blank">
+            <img src="isnta.png" alt="Instagram"></a>
+            <a href="https://www.twitter.com/" target="_blank">
+            <img src="pouli.png" alt="Twitter"></a>
+            </section>
+            <section class="footer-extras">
+                    <p>Call Us Here : 📞 2109999999 <br> Email Us : ✉ info@everytech.gr</p>
+            </section>
+            <article id="article-footer"><a href="#top">Back to Top</a></article>
+        </footer>
+    </body>
+</html>

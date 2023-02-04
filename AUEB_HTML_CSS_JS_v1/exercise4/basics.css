@@ -1,0 +1,637 @@
+
+@font-face {
+    font-family: ourFont;
+    src: url(ZenDots-Regular.ttf); /* grammatoseira gia to menu to h1 kai to footer mas */
+}
+
+/* background selidas, grammatoseira, afairesh default margin kai padding gia apolyth efarmogh background
+twn diaforwn perioxwn ths selidas */
+body {
+    background-color: rgb(3, 10, 96); /*rgb(26,34,49)*/
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: grid; /* display grid gia header nav main kai footer */
+    grid-template-columns: 140px 1fr; /* 1o column 140px gia na periorisoume ton xwro tou nav sthn selida */
+    grid-template-rows: auto auto auto; /* analoga to periexomeno prosarmose ta fr twn grammwn */
+}
+
+
+
+/* perioxi header, eikona-searchbar-h1 */
+header  {
+    color:white;
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2; /* thesi header sthn selida */
+}
+
+header h1 {
+    text-align : right;
+    margin-right: 15px;
+    font-family: "ourFont";
+}
+
+header img {
+    width: 100%; /* ekteinetai se olo to mhkos ths selidas kai se zoom in/out */
+    margin-top: 25px;
+}
+
+header input[type=text] { /* search bar (diakosmitiko) kathara gia aisthitiki */
+    font-size:20px;
+    width:200px; 
+    background-size: 40px;
+    font-family: "ourFont";
+    border-radius: 15px;
+    background-color: rgb(244, 244, 244);
+    background-image: url('searchicon.png'); /* background eikona search kai apo kato prosarmozoume megethos kai pou tha briskete mesa sto search bar */
+    background-position: 3px 5px;
+    background-repeat: no-repeat;
+    padding: 10px 15px 10px 40px;
+    transition: width 0.6s ease-in-out; /* tropos epektashs tou search bar width */
+    position : absolute; /* eiserxetai ligo stin eikona */
+    margin : 10px 0px 0px 10px; /* bazoume margin top gia na to sprwxoume mesa stin eikona */
+}
+
+/* otan patame to search bar epekteinetai kata 25% apo to current width tou */
+header input[type=text]:focus{
+    width : 25%;
+}
+
+/* extra yphresies tou eshop */
+.services {
+    background-color : rgba(0, 0, 0, 0.438);
+    font-size : 18px;
+}
+
+/* morfopoihsh twn services */
+header ul {
+    list-style-type: none;
+    padding: 20px 0px 20px 0px;
+    margin: 0;
+    display: flex ; /* flex gia na einai sth seira kai na tous prosthesoume kena metaxy tous */
+    justify-content: space-evenly;
+}
+
+/* navigation menu ths selidas */
+nav {
+    background-color: black;
+    font-family: "ourFont";
+    font-size: 15px;
+    margin: 0;
+    padding-bottom: 10px;
+    grid-column-start: 1;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+nav a { 
+    padding: 15px 8px 15px 15px;
+    color: white;
+    display: block; /* display block wste sto hover na allazei to bg color olou tou block kai na 
+    emfanizetai ortha */
+    transition: 0.6s; /* taxythta emfanisis tou hover pou exoume orisei parakato */
+}
+
+nav a:hover { /* hover twn koubiwn */
+    color: black;
+    background-color: grey;
+}
+
+nav a:active, a:visited, a:link {
+    text-decoration: none;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* genikes tropopoihseis ths perioxhs main ths selidas */
+main {
+    background-color: rgba(255, 255, 255, 0.906);
+    font-size: 20px;
+    color: black;
+    margin: 0;
+    padding: 25px 25px 25px 25px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+/* diataxh koutiwn sth main perioxh (selides products,laptops,screens) */
+.pr-lap-scr-layout {
+    display: grid; /* grid layout gia tis 3 selides me 3 sthles kai oi grammes automata mexri na teleiwsei to periexomeno */
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: minmax(200px, auto); /* min grammh 200px, h grammh einai auto sto max giati sta products yparxoun se orismenes listes
+    perissotera stoixeia, sigoura den theloume ligotero apo 200px */
+    row-gap: 25px;
+    justify-items: center;
+}
+
+.pr-lap-scr-layout h4 {
+    margin: 10px 15px 10px 15px;
+}
+
+/* paragrafos sto index kai paragrafoi sto about us */
+.p-main { 
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    padding: 25px;
+    box-shadow: 5px 10px 8px 1px #000000; 
+    font-size: 15px;
+    margin: 0;
+}
+
+/* paragrafos sthn home selida */
+.p-container-main {
+    display: flex; /* flex san column wste sto zoom out na pianei olh thn ektasi ths selidas */
+    flex-flow: column;
+}
+
+/* katigories proiontwn, laptops, othones */
+figure {
+    background-color: rgba(128, 128, 128, 0.13);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 0;
+    width: 100%;
+    display:grid; /* layout twn stoixeiwn mesa se kathe figure element */
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto; 
+    align-items: center; /* diataxh sthn grammh */
+    justify-items: center; /* diataxh sth sthlh */
+}
+
+figure ul {
+    margin: 0;
+    border-radius: 10px;
+    padding: 5px;
+    list-style-type: none; 
+    grid-row: 3/4; /* apo grammi 3 mexri grammi 4 */
+}
+
+figure li {
+    margin: 8px;
+    font-size: 15px;
+    text-align: center;
+}
+
+/* orizoume width kai auto height gia na einai 
+    ortho to megethos kathe eikonas, prosarmozei to height analoga thn eikona me bash ta 100px width */
+figure img {
+    width: 100px;
+    height: auto;
+    grid-row: 2/3;
+}
+
+figure a {
+    color: black;
+}
+
+figure a:hover {
+    color: rgba(0, 0, 0, 0.555);
+}
+
+/* eikones kai overlay twn onomatwn mas sto about us */
+.image-about-us {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 40px;
+}
+
+.position-overlay-about-us {
+    position: relative; /* mas epitrepei na baloume to overlay mesa stin eikona, parent relative */
+    width: 50%;
+    max-width : 300px;
+}
+
+.position-overlay-about-us:hover .overlay {
+    opacity: 1; /* emfanisi tou overlay sto hover */
+}
+
+.overlay {
+    position: absolute; /* absolute gia na eiselthei mesa sthn eikona absolute child */
+    bottom: 0; /* topothetisi ston pato ths eikonas */
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); /* Black see-through xrwma */
+    width: 100%;
+    transition: 0.5s ease;
+    opacity: 0; /* apokrypsh */
+    color: white;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+/* forma epikoinonias */
+.contact-fieldset {
+    width: 70%;
+    border-radius: 10px;
+    margin: 0;
+    padding : 20px 50px 0px 50px;
+    font-size: 15px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
+.contact-fieldset legend { /* titlos formas */
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.contact-fieldset label {
+    border-bottom: solid black 1px;
+    padding-bottom : 10px;
+}
+
+.contact-fieldset input {
+    background-color: rgba(0, 0, 0, 0.082);
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    border:none;
+    border-radius: 8px;
+}
+
+.contact-fieldset textarea {
+    resize: none; /* standard megethos textarea mh tropopoihsimo apo ton xristi */
+    margin-top: 30px;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.082);
+}
+
+.contact-fieldset input[type=submit]{
+    font-size: 15px;
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+    width: 100px;
+    margin-bottom: 10px;
+    margin-left: 0;
+}
+
+.contact-fieldset input[type=submit]:hover {
+    background-color: rgba(0, 0, 0, 0.555);
+}
+
+/* yposelido selidas */
+footer{
+    font-family: "ourFont";
+    color: white;
+    font-size: 15px;
+    padding: 10px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    display: flex; 
+    flex-flow: column; /* columns gia na exoume kathe section/article to ena kato apo to allo */
+    align-items: center;
+}
+
+footer img {
+    width: 50px;
+    height: 50px;
+}
+
+.footer-extras {
+    margin: 10px;
+    display: flex; /* flex gia na efarmosoume keno stis eikones */
+    gap: 50px;
+}
+
+/* back to top button tou yposelidou */
+#article-footer {
+    margin: 10px;
+}
+#article-footer a {
+    color: white;
+    font-size: 10px;
+}
+
+#article-footer a:hover {
+    color: rgba(255, 255, 255, 0.644);
+}
+
+#article-footer a:active, a:visited, a:link {
+    text-decoration: none;
+}
+
+/* selida analytikhs perigrafhs */
+#dell-main-image { /* kyriarxousa eikona */
+    height: auto;
+    float: right;
+    grid-column: 2/3; /* topothetisi ths me bash to grid tou section 1 ths selidas */
+    grid-row: 1/3;
+}
+
+/* morfopoihsh ypoloipwn eikonwn */
+.dell-images { 
+    height: auto;
+    margin: 20px;
+}
+
+/* articles twn analytikwn perigrafwn */
+.desc {
+    background-color: rgba(128, 128, 128, 0.13);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0;
+    font-size: 15px;
+}
+
+.desc h3,h4 {
+    border-bottom : solid black 1px;
+    padding-bottom: 10px;
+}
+
+.desc ul li {
+    list-style-type: none;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.desc a {
+    color: black;
+}
+
+.desc a:hover {
+    color: rgba(0, 0, 0, 0.555);
+}
+
+/* 2 eikones gia 2 xexorista article morfopoihsh */
+
+.desc-2-art-1 {
+    grid-column: 2/4;
+    grid-row: 1/2;
+}
+
+.desc-2-art-1 img {
+    float: left;
+    margin-top: 70px;
+}
+
+.desc-2-art-2 {
+    grid-column: 1/3;
+    grid-row: 2/3;
+}
+
+.desc-2-art-2 img {
+    float: right;
+    margin-top: 70px;
+}
+
+/* listes me texnika xaraktiristika */
+.specs {
+    padding: 15px;
+    font-size: 15px;
+    width: 250px;
+    width: 28%; /* katalilo width gia 3 boxes ana grammi, (.specs-layout) 
+    prospathisame me flex-basis kai flex alla den katafername na exoume 3 boxes ana grammi 
+    opote orisame sygkekrimeno width gia kathe stoixeia specs */
+}
+
+.specs ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+.specs li {
+    margin-bottom: 10px;
+}
+
+/* axiologiseis xrhstwn */
+.review {
+    background-color: white;
+    border-radius : 10px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.dell-layout {
+    display: grid;
+    row-gap: 50px; /* grid layout gia thn selida ths analytikhs perigrafhs me keno grammwn anamesa se kathe section ths */
+}
+
+.dell-first-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 120px; /* 120px h 2h grammh kathos ta stoixeia pou exoun topothetithei einai mikra */
+    align-items: center;
+    justify-items: center; /* grid layout gia to proto section ths main ths analytikhs perigrafhs gia na topothetisoume eukola
+    to kathe antikeimeno sto shmeio tou plaisiou pou epithimoume */
+}
+
+#images-layout-first-section {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+#title-layout-first-section {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.dell-second-section {
+    display: grid; /* opos kai to section 1 alla me diaforetika kena stin grammes kai mia extra sthlh wste na exoume to proto article
+    aristera kai to deutero dexia (diagwnia */
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.specs-layout {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+@media only screen and (max-width: 600px){
+    .services { display:none;}
+    header input[type=text] {
+        font-size:10px;
+        width:100px; 
+        background-size: 20px;
+        background-position: 1px 1px;
+        padding:5px 8px 5px 20px;
+        }
+    header h1{font-size: 20px; text-align:center;}
+
+    body{
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4,auto)
+    }
+    main{
+        grid-column: 1/1;
+        grid-row: 3/4;
+    }
+    footer{
+        grid-column:1/1;
+        grid-row: 4/5;
+    }
+    nav ul{
+        display:flex;
+        justify-content:space-evenly;
+    }
+    nav{
+        padding:0;
+    }
+
+    .contact-fieldset{
+        padding: 20px 10px 10px 10px;
+        width: auto;
+        font-size: 12px;
+    }
+    .contact-fieldset textarea{
+        width:95%;
+        font-size: 12px;
+    }
+
+    .contact-fieldset legend {
+        padding: 8px;
+        font-size: 15px;
+    }
+
+    .contact-fieldset input {
+        width: 115px;
+    }
+
+    .contact-fieldset input::placeholder {
+        font-size: 9px;
+    }
+
+    .pr-lap-scr-layout{
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(auto,1fr);
+    }
+    figure{
+        width:70%;
+    }
+    .dell-images {
+        margin: 0px 10px 0px 0px;
+    }
+
+    .desc h3 {
+        font-size: 15px;
+    }
+
+    .desc h4 {
+        font-size: 12px;
+    }
+
+    .desc {
+        font-size: 10px;
+    }
+
+    .desc ul li {
+        font-size: 12px;
+    }
+
+    .specs-layout {
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .specs {
+        font-size : 12px;
+    }
+
+    .specs h4 {
+        font-size: 14px;
+    }
+
+}
+
+@media screen and (min-width:601px) and (max-width:900px){
+    .services { font-size: 15px; }
+    .services li {text-align: center;}
+    header input[type=text] {
+        font-size:10px;
+        width:100px; 
+        background-size: 20px;
+        background-position: 1px 1px;
+        padding:5px 8px 5px 20px;
+        }
+    header h1{font-size: 20px; text-align:center;}
+
+    body{
+        display:grid;
+        grid-template-columns: 100px 1fr;
+        grid-template-rows: repeat(4,auto);
+    }
+    main{
+        grid-column: 2/3;
+        grid-row: 2/3;  
+    }
+    footer{
+        grid-column:1/3;
+        grid-row: 3/4;
+    }
+    nav{
+        font-size: 10px;
+        grid-column-start:1;
+        grid-row: 2/3;
+    }
+
+    .contact-fieldset{
+        padding: 20px 10px 10px 10px;
+        width: auto;
+        font-size: 12px;
+    }
+    .contact-fieldset textarea{
+        width:95%;
+        font-size: 13px;
+    }
+
+    .contact-fieldset legend {
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    .contact-fieldset input {
+        width: 130px;
+    }
+
+    .contact-fieldset input::placeholder {
+        font-size: 11px;
+    }
+
+    .pr-lap-scr-layout{
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(auto,1fr);
+    }
+    figure{
+        width:70%;
+    }
+
+    .desc{
+        font-size:12px;
+    }
+    .desc ul li{
+        font-size:12px;
+    }
+    .specs{
+        font-size:12px;
+    }
+    .dell-images {
+        margin: 0px 15px 0px 15px;
+    }
+
+}

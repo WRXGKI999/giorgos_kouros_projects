@@ -1,0 +1,357 @@
+/* background selidas, grammatoseira, afairesh default margin kai padding gia apolyth efarmogh background
+twn diaforwn perioxwn ths selidas */
+body {
+    background-color: rgb(3, 10, 96); /*rgb(26,34,49)*/
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* perioxi header, eikona-searchbar-h1 */
+header  {
+    color:white;
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+header h1 {
+    text-align : right;
+    margin-right: 15px;
+}
+
+header img {
+    width: 100%; /* ekteinetai se olo to mhkos ths selidas kai se zoom in/out */
+    margin-top: 25px;
+}
+
+header input[type=text] { /* search bar (diakosmitiko) kathara gia aisthitiki */
+    font-size:20px;
+    width: 130px;
+    border-radius: 15px;
+    background-color: rgb(244, 244, 244);
+    background-image: url('searchicon.png'); /* background eikona search kai apo kato prosarmozoume megethos kai pou tha briskete mesa sto search bar */
+    background-position: 3px 5px; 
+    background-size: 40px;
+    background-repeat: no-repeat;
+    padding: 10px 15px 10px 40px;
+    transition: width 0.6s ease-in-out; /* tropos epektashs tou search bar width */
+    position : absolute; /* eiserxetai ligo stin eikona */
+    margin : 10px 0px 0px 10px; /* bazoume margin top gia na to sprwxoume mesa stin eikona */
+}
+
+/* otan patame to search bar epekteinetai kata 25% apo to current width tou */
+header input[type=text]:focus{
+    width : 25%;
+}
+
+/* extra yphresies tou eshop */
+.services {
+    background-color : rgba(0, 0, 0, 0.438);
+    font-size : 18px;
+}
+
+/* morfopoihsh twn services (h monh lista sth perioxh header) */
+header ul {
+    list-style-type: none;
+    padding: 20px 0px 20px 0px;
+    margin: 0;
+}
+
+/* navigation menu ths selidas */
+nav {
+    background-color: black;
+    font-size: 15px;
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+nav a {
+    padding: 15px 8px 15px 15px;
+    color: white;
+    display: block; /* display block wste sto hover na allazei to bg color olou tou block kai na 
+    emfanizetai ortha */
+    transition: 0.6s; /* taxythta emfanisis tou hover pou exoume orisei parakato */
+}
+
+nav a:hover { /* hover twn koubiwn */
+    color: black;
+    background-color: grey;
+}
+
+nav a:active, a:visited, a:link {
+    text-decoration: none;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* genikes tropopoihseis ths perioxhs main ths selidas */
+main {
+    background-color: rgba(255, 255, 255, 0.906);
+    font-size: 20px;
+    color: black;
+    margin: 0;
+    padding: 25px 25px 25px 25px;
+}
+
+/* paragrafos sto index kai paragrafoi sto about us */
+.p-main { 
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    padding: 25px;
+    box-shadow: 5px 10px 8px 1px #000000;
+    font-size: 15px;
+    margin: 0;
+}
+
+/* katigories proiontwn, laptops, othones */
+figure {
+    background-color: rgba(128, 128, 128, 0.13);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 0;
+    width: 100%;
+}
+
+figure ul {
+    margin: 0;
+    border-radius: 10px;
+    padding: 5px;
+    list-style-type: none;
+}
+
+figure li {
+    margin: 8px;
+    font-size: 15px;
+    text-align: center;
+}
+
+/* orizoume width kai auto height gia na einai 
+    ortho to megethos kathe eikonas, prosarmozei to height analoga thn eikona me bash ta 100px width */
+    figure img {
+    width: 100px; 
+    height: auto;
+}
+
+figure a {
+    color: black;
+}
+
+figure a:hover {
+    color: rgba(0, 0, 0, 0.555);
+}
+
+/* eikones kai overlay twn onomatwn mas sto about us */
+.image-about-us {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 40px;
+}
+
+.position-overlay-about-us {
+    position: relative; /* mas epitrepei na baloume to overlay mesa stin eikona, parent relative */
+    width: 50%;
+    max-width : 300px;
+}
+
+.position-overlay-about-us:hover .overlay {
+    opacity: 1; /* emfanisi tou overlay sto hover */
+}
+
+.overlay {
+    position: absolute; /* absolute gia na eiselthei mesa sthn eikona absolute child */
+    bottom: 0; /* topothetisi ston pato ths eikonas */
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); /* Black see-through xrwma */
+    width: 100%;
+    transition: 0.5s ease;
+    opacity: 0; /* apokrypsh */
+    color: white;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+/* forma epikoinonias */
+.contact-fieldset {
+    width: 50%;
+    border-radius: 10px;
+    margin: 0;
+    padding : 20px 50px 0px 50px;
+    font-size: 15px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
+.contact-fieldset legend { /* titlos formas */
+    color: white;
+    background-color: black;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.contact-fieldset label {
+    border-bottom: solid black 1px;
+    padding-bottom : 10px;
+}
+
+.contact-fieldset input {
+    background-color: rgba(0, 0, 0, 0.082);
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    border:none;
+    border-radius: 8px;
+}
+
+.contact-fieldset textarea {
+    resize: none; /* standard megethos textarea mh tropopoihsimo apo ton xristi */
+    margin-top: 30px;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.082);
+}
+
+.contact-fieldset input[type=submit]{
+    font-size: 15px;
+    border-radius: 4px;
+    background-color: black;
+    color: white;
+    width: 100px;
+    margin-bottom: 10px;
+    margin-left: 0;
+}
+
+.contact-fieldset input[type=submit]:hover {
+    background-color: rgba(0, 0, 0, 0.555);
+}
+
+/* yposelido selidas */
+footer{
+    color: white;
+    font-size: 15px;
+    padding: 10px;
+}
+
+footer img {
+    width: 50px;
+    height: 50px;
+}
+
+footer p {
+    font-family:'Times New Roman', Times, serif;    
+}
+
+.footer-extras {
+    margin: 10px;
+}
+
+/* back to top button tou yposelidou */
+#article-footer {
+    margin: 10px;
+}
+#article-footer a {
+    color: white;
+    font-size: 10px;
+}
+
+#article-footer a:hover {
+    color: rgba(255, 255, 255, 0.644);
+}
+
+#article-footer a:active, a:visited, a:link {
+    text-decoration: none;
+}
+
+/* selida analytikhs perigrafhs */
+#dell-main-image { /* kyriarxousa eikona */
+    width: 350px;
+    height: auto;
+    float: right;
+}
+
+/* morfopoihsh ypoloipwn eikonwn */
+.dell-images { 
+    width: 200px;
+    height: auto;
+    margin: 20px;
+}
+
+/* articles twn analytikwn perigrafwn */
+.desc {
+    background-color: rgba(128, 128, 128, 0.13);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0;
+    font-size: 15px;
+}
+
+.desc h3,h4 {
+    border-bottom : solid black 1px;
+    padding-bottom: 10px;
+}
+
+.desc ul li {
+    list-style-type: none;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.desc a {
+    color: black;
+}
+
+.desc a:hover {
+    color: rgba(0, 0, 0, 0.555);
+}
+
+/* 2 eikones gia 2 xexorista article morfopoihsh */
+.desc-2-art-1 img {
+    float: left;
+    margin-top: 70px;
+}
+
+.desc-2-art-2 img {
+    float: right;
+    margin-top: 70px;
+}
+
+/* listes me texnika xaraktiristika */
+.specs {
+    padding: 15px;
+    font-size: 15px;
+    width: 250px;
+}
+
+.specs ul {
+    list-style-type: none;
+}
+
+.specs li {
+    margin-bottom: 10px;
+}
+
+/* axiologiseis xrhstwn */
+.review {
+    background-color: white;
+    border-radius : 10px;
+    padding: 10px;
+    margin-top: 10px;
+}
+    
+
+
+
+
+
+
+
+
