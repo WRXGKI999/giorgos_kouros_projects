@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="el">
+    <head>
+        <title>Products</title>
+        <link rel="stylesheet" href="css/project2.css"> 
+        <link rel="icon" href="images/W.png">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="WikiShop API">
+        <meta name="author" content="Giorgos, Manos">
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+        <script src="js/project2-category.js" type="text/javascript"></script>
+        <script src="js/user-cart.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <header>
+            <section>
+            <form id="search">
+                <input  type="text" name="search" placeholder="Searching for..">
+            </form>
+            <h1> WikiShop </h1>
+            <form id="connect">
+                <input type="text" id="username" name="username" placeholder="Username" autocomplete="on" title="Type your username here"><br>
+                <input type="password" id="password" name="password" placeholder="Password" title="Typer your password here"><br>           
+                <input type="button" value="LOGIN" onclick="check()">
+                <div id="cart-size"></div>
+                <div id="login-info"></div>
+            </form>
+            
+            </section>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="index.html"> Home </a></li>
+            </ul>
+            <fieldset>
+                <legend>Filters</legend>
+                <script id="filters" type="text/x-handlebars-template">  
+                    <input type="radio" id="all" name="filter" checked onclick="filter_reset()"><!--allagi-->
+                    <label for="all">All</label><br>
+                    {{#each this}}
+                        <input type="radio" id= {{id}} name="filter" value="{{title}}" onclick="filter(id)">
+                        <label for="{{id}}">{{title}}</label><br>
+                    {{/each}}
+                </script>
+                <div id="filter-menu"></div>
+            </fieldset>
+        </nav>
+        <main>
+            <script id="products" type="text/x-handlebars-template">
+                {{#each this}}
+                    <figure>
+                        <figcaption><h5>{{title}}</h5></figcaption>
+                        <img src="{{image}}" alt="{{title}}">
+                        <ul>
+                            <li>Cost → {{cost}}</li>
+                            <li>Description → {{description}} </li>
+                        </ul>
+                        <input type="button" id={{id}} name={{cost}} value="ADD TO CART 🛒" onclick="addtocart(id,name,`{{title}}`)">
+                    </figure>
+                {{/each}}
+            </script>
+            <div id="product-menu" class="pr-lap-scr-layout"></div>
+        </main>
+        <footer>
+            <section class="footer-extras">
+            <a href="https://www.facebook.com/" target="_blank">
+            <img src="images/fb.png" alt="Facebook"></a>
+            <a href="https://www.instagram.com/" target="_blank">
+            <img src="images/isnta.png" alt="Instagram"></a>
+            <a href="https://www.twitter.com/" target="_blank">
+            <img src="images/pouli.png" alt="Twitter"></a>
+            </section>
+            <section class="footer-extras">
+                    <p>Call Us Here : 📞 2109999999 <br> Email Us : ✉ info@wikishop.gr</p>
+            </section>
+            <article id="article-footer"><a href="#top">Back to Top</a></article>
+        </footer>
+    </body>
+</html>

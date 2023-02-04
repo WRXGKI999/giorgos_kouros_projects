@@ -1,0 +1,491 @@
+
+@font-face {
+    font-family: ourFont;
+    src: url(ZenDots-Regular.ttf); /* grammatoseira gia to menu to h1 kai to footer mas */
+}
+
+/* background selidas, grammatoseira, afairesh default margin kai padding gia apolyth efarmogh background
+twn diaforwn perioxwn ths selidas */
+body {
+    background-color: rgb(3, 10, 96); /*rgb(26,34,49)*/
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: grid; /* display grid gia header nav main kai footer */
+    grid-template-columns: 140px /* minmax(140px,auto)*/ 1fr; /* 1o column 140px gia na periorisoume ton xwro tou nav sthn selida */
+    grid-template-rows: auto auto /*minmax(600px, auto)*/ auto; /* analoga to periexomeno prosarmose ta fr twn grammwn */
+}
+
+
+
+/* perioxi header, eikona-searchbar-h1 */
+header  {
+    color:white;
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2; /* thesi header sthn selida */
+}
+
+header h1 {
+    text-align : right;
+    margin-right: 15px;
+    font-family: "ourFont";
+}
+
+#search input[type=text] { /* search bar (diakosmitiko) kathara gia aisthitiki */
+    font-size:20px;
+    width:200px; 
+    background-size: 40px;
+    font-family: "ourFont";
+    border-radius: 15px;
+    background-color: rgb(244, 244, 244);
+    background-image: url('searchicon.png'); /* background eikona search kai apo kato prosarmozoume megethos kai pou tha briskete mesa sto search bar */
+    background-position: 3px 5px;
+    background-repeat: no-repeat;
+    padding: 10px 15px 10px 40px;
+    transition: width 0.6s ease-in-out; /* tropos epektashs tou search bar width */
+    position : absolute; /* eiserxetai ligo stin eikona */
+    margin : 10px 0px 0px 10px; /* bazoume margin top gia na to sprwxoume mesa stin eikona */
+}
+
+/* otan patame to search bar epekteinetai kata 25% apo to current width tou */
+#search input[type=text]:focus{
+    width : 25%;
+}
+
+#connect {
+    float: right;
+    margin: 0px 15px 15px 0px;
+    background-color: black;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#connect input[type=text], #connect input[type=password] {
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin-bottom: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 12px;
+    font-family: ourFont;
+
+}
+
+#connect input[type=button] {
+    outline: 0;
+    background: rgb(3, 10, 96);
+    width: 100%;
+    border: 0;
+    padding: 10px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: ourFont;
+}
+
+#connect input[type=button]:hover, input[type=button]:active { 
+    background: rgb(35, 40, 102);
+    transition: 0.5s;
+  }
+
+#cart-size {
+    font-size: 13px;
+    font-family: ourFont;
+    margin-top: 5px;
+}
+
+#cart-size a {
+    border-bottom: 1px solid white;
+    color: red;
+}
+
+#cart-size a:hover {
+    border-bottom: 1px solid red;
+    color: white;
+    transition: 0.4s;
+}
+
+
+#login-info {
+    font-size: 11px;
+    font-family: ourFont;
+    float:right;
+    margin: 15px 34px 5px 0px;
+}
+
+#totalcart-menu {
+    font-family: ourFont;
+}
+
+#totalcart-menu p {
+text-align: right;
+font-weight: bold;
+}
+
+#totalcart-menu table {
+margin: 20px 0;
+width: 100%;
+border-collapse: collapse;
+}
+
+#totalcart-menu table th, #totalcart-menu table td {
+font-size: 16px;
+border: 1px solid #dddddd;
+padding: 8px;
+text-align: left;
+}
+
+#totalcart-menu table th {
+font-weight: bold;
+background-color: rgba(128, 128, 128, 0.13);
+}
+
+#totalcart-menu table tr:nth-child(even) {
+background-color: #f2f2f2;
+}
+
+/* navigation menu ths selidas */
+nav {
+    background-color: black;
+    font-family: "ourFont";
+    font-size: 15px;
+    color: white;
+    margin: 0;
+    padding-bottom: 10px;
+    grid-column-start: 1;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+nav a { 
+    padding: 15px 8px 15px 15px;
+    color: white;
+    display: block; /* display block wste sto hover na allazei to bg color olou tou block kai na 
+    emfanizetai ortha */
+    transition: 0.6s; /* taxythta emfanisis tou hover pou exoume orisei parakato */
+}
+
+nav a:hover { /* hover twn koubiwn */
+    color: black;
+    background-color: grey;
+}
+
+nav a:active, a:visited, a:link {
+    text-decoration: none;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+nav fieldset {
+    font-size: 11px;
+    border: 0;
+    margin-top: 10px;
+}
+
+nav fieldset input[type=radio]:hover, label{
+    cursor: pointer;
+    transform:scale(1.5);
+    transition: 0.5s;
+}
+
+
+
+/* genikes tropopoihseis ths perioxhs main ths selidas */
+main {
+    background-color: rgba(255, 255, 255, 0.906);
+    font-size: 20px;
+    color: black;
+    margin: 0;
+    padding: 25px 25px 25px 25px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+/* diataxh koutiwn sth main perioxh (selides products,laptops,screens) */
+.pr-lap-scr-layout {
+    display: grid; /* grid layout gia tis 3 selides me 3 sthles kai oi grammes automata mexri na teleiwsei to periexomeno */
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: minmax(200px, auto); /* min grammh 200px, h grammh einai auto sto max giati sta products yparxoun se orismenes listes
+    perissotera stoixeia, sigoura den theloume ligotero apo 200px */
+    row-gap: 25px;
+    justify-items: center;
+}
+
+.pr-lap-scr-layout h4,h5 {
+    margin: 10px 5px 10px 5px;
+    border-bottom : solid black 1px;
+    padding-bottom: 10px;
+}
+
+
+
+/* katigories proiontwn */
+figure {
+    background-color: rgba(128, 128, 128, 0.13);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 0;
+}
+
+/* orizoume width kai auto height gia na einai 
+    ortho to megethos kathe eikonas, prosarmozei to height analoga thn eikona me bash ta 100px width */
+figure img {
+    width: 100px;
+    height: auto;
+    grid-row: 2/3;
+}
+
+figure h4,h5 {
+    grid-row: 1/2;
+    
+}
+
+figure a {
+    color: black;
+}
+
+#category-menu figure { /* grid gia ta figures tou index, exei 2 grammes mono */
+    display:grid; /* layout twn stoixeiwn mesa se kathe figure element */
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto ; 
+    align-items: center; /* diataxh sthn grammh */
+    justify-items: center; /* diataxh sth sthlh */
+    width: 400px;
+}
+
+#category-menu img {
+    display: block;
+    border-radius: 5px;
+}
+
+#category-menu img:hover {
+    transition: 0.5s;
+     transform:scale(1.1);
+     z-index: 2; 
+     border: solid black 1px;
+}
+
+#product-menu figure { /* grid gia to category, exei parapano grammes */
+    background-color: rgba(128, 128, 128, 0.13);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 0;
+    width: 400px;
+    display:grid; /* layout twn stoixeiwn mesa se kathe figure element */
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 120px 250px auto; 
+    justify-items: center;
+}
+
+#product-menu figure img {
+    grid-row: 2/3;
+}
+
+#product-menu figure h4 {
+    grid-row: 1/2;
+    border-bottom : solid black 1px;
+    padding-bottom: 10px;
+    font-family: ourFont;
+}
+
+#product-menu figure li {
+    grid-row: 3/4;
+    font-size: 13px;
+}
+
+#product-menu figure ul {
+    padding-left: 15px;
+}
+
+#product-menu figure input[type=button] {
+    font-family: ourFont;
+    font-size: 15px;
+    display: block;
+    border-radius: 20px;
+    border: none;
+    background: black;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+    transition:transform 0.1s;
+    width: 90%;
+}
+
+#product-menu figure input[type=button]:hover {
+    background: rgb(158, 158, 158);
+    color: black;
+    transform:scale(1.1);
+    transition: 0.5s;
+}
+
+/* yposelido selidas */
+footer{
+    font-family: "ourFont";
+    color: white;
+    font-size: 15px;
+    padding: 10px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    display: flex; 
+    flex-flow: column; /* columns gia na exoume kathe section/article to ena kato apo to allo */
+    align-items: center;
+}
+
+footer img {
+    width: 50px;
+    height: 50px;
+}
+
+.footer-extras {
+    margin: 10px;
+    display: flex; /* flex gia na efarmosoume keno stis eikones */
+    gap: 50px;
+}
+
+/* back to top button tou yposelidou */
+#article-footer {
+    margin: 10px;
+}
+#article-footer a {
+    color: white;
+    font-size: 10px;
+}
+
+#article-footer a:hover {
+    color: rgba(255, 255, 255, 0.644);
+}
+
+#article-footer a:active, a:visited, a:link {
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 600px){
+    #search input[type=text] {
+        font-size:8px;
+        width:100px; 
+        background-size: 2000px;
+        background-position: 1px 1px;
+        padding:5px 8px 5px 20px;
+        }
+    h1{
+        font-size:35px;
+    }
+    #connect{
+        margin: 0px 10px 10px 10px;
+        padding: 0px 10px 0px 10px;
+        background-color: black;
+        width: 90%;
+    }
+    #connect input[type=text], #connect input[type=password]{
+        font-size: 10px;
+        margin: 0px 0px 2px 0px;
+        padding: 5px;
+    }
+    #connect input[type=button]{
+        margin:0px;
+        width: 30%;
+        font-size:8px;
+        padding: 3px;
+    }
+    #cart-size {
+        font-size: 10px;
+        font-family: ourFont;
+        margin: 0px 0px 2px 0px;
+    }    
+    #login-info {
+        font-size: 8px;
+        margin: 0px 0px 5px 0px;
+        font-family: ourFont;
+    }
+
+    body{
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4,auto)
+    }
+    main{
+        grid-column: 1/1;
+        grid-row: 3/4;
+    }
+    footer{
+        grid-column:1/1;
+        grid-row: 4/5;
+    }
+    nav fieldset legend{
+        font-size:20px;
+        text-align: center;
+    }
+    #filter-menu{
+        display: flex;
+        font-size: 10px;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 0px 10px 0px; /* allagh */
+    }
+    nav ul{
+        text-align: center;
+    }
+    nav{
+        padding:0;
+    }
+
+    .pr-lap-scr-layout{
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(auto,1fr);
+    }
+    figure{
+        width:70%;
+    }
+}
+
+@media screen and (min-width:601px) and (max-width:900px){
+    header input[type=text] {
+        font-size:10px;
+        width:100px; 
+        background-size: 20px;
+        background-position: 1px 1px;
+        padding:5px 8px 5px 20px;
+        }
+    body{
+        display:grid;
+        grid-template-columns: 100px 1fr;
+        grid-template-rows: repeat(4,auto);
+    }
+    main{
+        grid-column: 2/3;
+        grid-row: 2/3;  
+    }
+    footer{
+        grid-column:1/3;
+        grid-row: 3/4;
+    }
+    nav{
+        font-size: 10px;
+        grid-column-start:1;
+        grid-row: 2/3;
+    }
+    .pr-lap-scr-layout{
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(auto,1fr);
+    }
+    figure{
+        width:70%;
+    }
+}
