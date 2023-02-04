@@ -1,0 +1,4 @@
+EndPoint : gxserver.postgres.database.azure.com
+Username : examiner
+Password : examiner2021
+Database : AirBnb
