@@ -1,0 +1,6 @@
+GEORGIOS KOUROS - 3190095
+CHARALAMPIA-MARIA FARMAKI - 3190208
+EndPoint : gxserver.postgres.database.azure.com
+Username : examiner
+Password : examiner2021
+Database : GX_db
