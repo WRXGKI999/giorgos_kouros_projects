@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/cvExit"
+        android:layout_width="50dp"
+        android:layout_height="35dp"
+        android:layout_marginVertical="22dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/exit" />
+
+    <TextView
+        android:id="@+id/tvLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_italic"
+        android:text="MENU"
+        android:layout_marginTop="150dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvRun"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvLabel"
+        app:cardCornerRadius="30dp"
+        app:cardBackgroundColor="#FFFFFF"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        app:cardElevation="10dp"
+        android:layout_marginHorizontal="1dp">
+
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="250dp"
+           android:fontFamily="@font/montserrat_italic"
+           android:text="SUBMIT\nRUN"
+           android:gravity="center"
+           android:textColor="@color/main"
+           android:textSize="35sp"
+           android:textStyle="normal" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvStatistics"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cvRun"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        app:cardElevation="10dp"
+        android:layout_marginHorizontal="1dp">
+
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="120dp"
+           android:fontFamily="@font/montserrat_italic"
+           android:text="STATISTICS"
+           android:gravity="center"
+           android:textColor="@color/main"
+           android:textSize="35sp"
+           android:textStyle="normal" />
+
+    </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/cvStatus"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cvStatistics"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="1dp"
+            android:fontFamily="@font/montserrat_italic"
+            android:text=""
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"
+            android:textStyle="normal" />
+
+</RelativeLayout>
